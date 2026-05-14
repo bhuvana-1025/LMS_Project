@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>Dashboard</title>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body onload="loadCourses()">
+
+<script>
+
+const user =
+    localStorage.getItem("user");
+
+if (!user) {
+
+    window.location =
+        "login.html";
+}
+
+</script>
+
+<div class="header">
+
+<h1>Nextgen Edu Connect</h1>
+
+<div>
+
+<span id="welcome"></span>
+
+<button onclick="logout()">
+Logout
+</button>
+
+</div>
+
+</div>
+
+<div class="container">
+
+<h2>Courses</h2>
+
+<div id="courseList"
+     class="course-grid"></div>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
+<script src="app.js"></script>
+
+<script>
+
+document.getElementById("welcome")
+    .innerHTML =
+    "Welcome " + user;
+
+</script>
+
+</body>
+</html>

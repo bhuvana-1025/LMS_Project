@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>Course Videos</title>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body onload="loadCourseVideos()">
+
+<script>
+
+const user =
+    localStorage.getItem("user");
+
+if (!user) {
+
+    window.location =
+        "login.html";
+}
+
+</script>
+
+<div class="header">
+
+<h1>Course Videos</h1>
+
+<button onclick="logout()">
+Logout
+</button>
+
+</div>
+
+<div class="container">
+
+<div id="videoList"></div>
+
+<button id="quizBtn"
+        disabled
+        onclick="openQuiz()">
+
+Start Quiz
+
+</button>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
+<script src="app.js"></script>
+
+</body>
+</html>

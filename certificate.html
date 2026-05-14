@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>Certificate</title>
+
+<style>
+
+body {
+
+    font-family: Arial;
+
+    text-align: center;
+
+    padding-top: 100px;
+
+    background: #f5f5f5;
+}
+
+.certificate {
+
+    width: 700px;
+
+    margin: auto;
+
+    background: white;
+
+    padding: 50px;
+
+    border: 10px solid gold;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="certificate">
+
+<h1>Certificate of Completion</h1>
+
+<h2>This certificate is awarded to</h2>
+
+<h1 id="studentName"></h1>
+
+<h3>For Successfully Completing the Course</h3>
+
+</div>
+
+<script>
+
+document.getElementById("studentName")
+    .innerHTML =
+    localStorage.getItem("user");
+
+</script>
+
+</body>
+</html>

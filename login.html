@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Nextgen Edu Connect</title>
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <style>
+
+        * {
+
+            margin: 0;
+
+            padding: 0;
+
+            box-sizing: border-box;
+        }
+
+        body {
+
+            font-family: Arial, sans-serif;
+
+            height: 100vh;
+
+            display: flex;
+
+            justify-content: center;
+
+            align-items: center;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #050b1f,
+                    #0d47a1,
+                    #2196f3
+                );
+
+            overflow: hidden;
+        }
+
+        /* BACKGROUND GLOW */
+
+        .bg-circle1 {
+
+            position: absolute;
+
+            width: 300px;
+
+            height: 300px;
+
+            background: #2196f3;
+
+            border-radius: 50%;
+
+            top: -100px;
+
+            left: -100px;
+
+            filter: blur(80px);
+
+            opacity: 0.5;
+        }
+
+        .bg-circle2 {
+
+            position: absolute;
+
+            width: 350px;
+
+            height: 350px;
+
+            background: #0d47a1;
+
+            border-radius: 50%;
+
+            bottom: -120px;
+
+            right: -100px;
+
+            filter: blur(100px);
+
+            opacity: 0.6;
+        }
+
+        /* LOGIN CARD */
+
+        .login-box {
+
+            position: relative;
+
+            width: 420px;
+
+            padding: 45px;
+
+            border-radius: 25px;
+
+            background:
+                rgba(255,255,255,0.08);
+
+            backdrop-filter: blur(15px);
+
+            border:
+                1px solid rgba(255,255,255,0.2);
+
+            box-shadow:
+                0px 10px 40px
+                rgba(0,0,0,0.4);
+
+            text-align: center;
+
+            color: white;
+
+            z-index: 10;
+        }
+
+        /* LOGO */
+
+        .logo {
+
+            width: 90px;
+
+            height: 90px;
+
+            margin: auto;
+
+            margin-bottom: 20px;
+
+            border-radius: 50%;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #42a5f5,
+                    #1e88e5
+                );
+
+            display: flex;
+
+            justify-content: center;
+
+            align-items: center;
+
+            font-size: 30px;
+
+            font-weight: bold;
+
+            box-shadow:
+                0px 0px 25px
+                rgba(33,150,243,0.7);
+        }
+
+        h1 {
+
+            margin-bottom: 10px;
+
+            font-size: 32px;
+        }
+
+        p {
+
+            color: #d0d0d0;
+
+            margin-bottom: 30px;
+        }
+
+        /* INPUTS */
+
+        .input-box {
+
+            margin-bottom: 20px;
+        }
+
+        input {
+
+            width: 100%;
+
+            padding: 15px;
+
+            border: none;
+
+            border-radius: 12px;
+
+            background:
+                rgba(255,255,255,0.12);
+
+            color: white;
+
+            font-size: 16px;
+
+            outline: none;
+
+            transition: 0.3s;
+        }
+
+        input::placeholder {
+
+            color: #d0d0d0;
+        }
+
+        input:focus {
+
+            background:
+                rgba(255,255,255,0.18);
+
+            box-shadow:
+                0px 0px 12px
+                rgba(33,150,243,0.8);
+        }
+
+        /* BUTTON */
+
+        button {
+
+            width: 100%;
+
+            padding: 15px;
+
+            border: none;
+
+            border-radius: 12px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #2196f3,
+                    #42a5f5
+                );
+
+            color: white;
+
+            font-size: 18px;
+
+            font-weight: bold;
+
+            cursor: pointer;
+
+            transition: 0.3s;
+        }
+
+        button:hover {
+
+            transform: translateY(-2px);
+
+            box-shadow:
+                0px 8px 20px
+                rgba(33,150,243,0.5);
+        }
+
+        #msg {
+
+            margin-top: 20px;
+
+            color: #ff8080;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <!-- GLOW EFFECTS -->
+
+    <div class="bg-circle1"></div>
+
+    <div class="bg-circle2"></div>
+
+    <!-- LOGIN CARD -->
+
+    <div class="login-box">
+
+        <div class="logo">
+
+            NEC
+
+        </div>
+
+        <h1>Welcome</h1>
+
+        <p>Login to continue learning</p>
+
+        <div class="input-box">
+
+            <input type="text"
+                   id="username"
+                   placeholder="Enter Username">
+
+        </div>
+
+        <div class="input-box">
+
+            <input type="password"
+                   id="password"
+                   placeholder="Enter Password">
+
+        </div>
+
+        <button onclick="doLogin()">
+
+            Login
+
+        </button>
+
+        <h3 id="msg"></h3>
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
+
+    <script src="app.js"></script>
+
+    <script>
+
+        async function doLogin() {
+
+            const username =
+
+                document.getElementById(
+                    "username"
+                ).value;
+
+            const password =
+
+                document.getElementById(
+                    "password"
+                ).value;
+
+            await login(
+                username,
+                password
+            );
+        }
+
+    </script>
+
+</body>
+
+</html>

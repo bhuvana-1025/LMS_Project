@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>Quiz</title>
+
+<link rel="stylesheet" href="style.css">
+
+<style>
+
+.quiz-box {
+
+    background: white;
+
+    padding: 20px;
+
+    border-radius: 10px;
+}
+
+</style>
+
+</head>
+
+<body onload="loadQuiz()">
+
+<script>
+
+const user =
+    localStorage.getItem("user");
+
+if (!user) {
+
+    window.location =
+        "login.html";
+}
+
+</script>
+
+<div class="header">
+
+<h1>Quiz</h1>
+
+<button onclick="logout()">
+Logout
+</button>
+
+</div>
+
+<div class="container">
+
+<div class="quiz-box">
+
+<form id="quizForm"></form>
+
+<button onclick="submitQuiz()"
+        type="button">
+
+Submit Quiz
+
+</button>
+
+</div>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
+<script src="app.js"></script>
+
+</body>
+</html>
